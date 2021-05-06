@@ -1,0 +1,21 @@
+_id: req_wrk_fbf4be4b2f0b4d9db250d378115580c7350b8ff6
+type: Request
+parentId: wrk_fbf4be4b2f0b4d9db250d378115580c7
+modified: 1620135179895
+created: 1620131267113
+url: "{{ base_url }}/names/{{ position }}"
+name: Returns the name a the specific position.
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1620131267113
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

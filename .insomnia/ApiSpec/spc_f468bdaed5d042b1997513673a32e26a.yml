@@ -1,0 +1,73 @@
+_id: spc_f468bdaed5d042b1997513673a32e26a
+type: ApiSpec
+parentId: wrk_fbf4be4b2f0b4d9db250d378115580c7
+modified: 1620305822445
+created: 1620126116993
+fileName: names-test
+contents: >-
+  openapi: 3.0.0
+
+  info:
+    title: Names API
+    description: | 
+      The ultimate API for working with names!
+      
+      You can find a whole bunch of names here and perhaps even add your own!
+    version: 0.1.0
+  servers:
+    - url: http://localhost:3000/
+      description: Localhost development environment
+  tags:
+    - name: names
+      description: A bunch of names!
+      externalDocs:
+        description: Find out more
+        url: http://swagger.io
+  paths:
+    /names:
+      get:
+        tags:
+          - names
+        summary: Returns a list of names.
+        description: Optional extended description in CommonMark or HTML.
+        responses:
+          '200':    # status code
+            description: A JSON array of names
+            content:
+              application/json:
+                schema: 
+                  type: array
+                  items: 
+                    type: string
+                    example: Scotty
+    /names/{position}:
+      get: 
+        tags:
+          - names
+        summary: Returns the name a the specific position.
+        description: bla bla
+        parameters:
+          - name: position
+            in: path
+            description: Position in the array.
+            required: true
+            schema:
+              type: integer
+              format: int64
+              example: 4
+        responses:
+          '200': 
+            description: A single name.
+            content:
+              application/json:
+                schema:
+                  type: string
+                  example: Cpt. Kirk
+          '404':
+            description: The error message if nothing was found on that position.
+            content: 
+              application/json:
+                schema:
+                  type: string
+                  example: Not found
+contentType: yaml
